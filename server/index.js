@@ -23,13 +23,13 @@ mongoose.connect(process.env.MONGO_URL, {
         console.log(err.message);
     })
 
-const server = app.listen(process.env.PORT, "192.168.0.141", ()=> {
+const server = app.listen(process.env.PORT, ()=> {
     console.log(`Server Started on port ${process.env.PORT}`);
 })
 
 const io = socket(server, {
     cors:{
-        origin: "http://192.168.0.141:5173",
+        origin: "https://delicate-cassata-9489c7.netlify.app/",
         credentials: true,
     }
 })
