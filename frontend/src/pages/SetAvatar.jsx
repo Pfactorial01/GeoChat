@@ -53,7 +53,7 @@ const fetchImage = async () =>
     { const data = [];
     for (let i = 0; i < 4; i++) {
       const image = multiavatar(`${Math.round(Math.random() * 1000)}`)
-      const buffer = new Buffer(image.data);
+      const buffer = new Buffer(image);
       data.push(buffer.toString("base64"));
     }
     setAvatars(data);
