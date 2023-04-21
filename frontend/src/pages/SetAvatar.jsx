@@ -7,8 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
+import multiavatar from '@multiavatar/multiavatar/esm';
 export default function SetAvatar() {
-  const api = `https://api.multiavatar.com/4645646`;
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -52,9 +52,7 @@ export default function SetAvatar() {
 const fetchImage = async () =>
     { const data = [];
     for (let i = 0; i < 4; i++) {
-      const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 1000)}`
-      );
+      const image = multiavatar(`${Math.round(Math.random() * 1000)}`)
       const buffer = new Buffer(image.data);
       data.push(buffer.toString("base64"));
     }
