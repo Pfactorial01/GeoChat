@@ -67,7 +67,8 @@ module.exports.login = async (req, res, next) => {
 module.exports.setAvatar = async (req, res, next) => {
     try {
         const userId = req.params.userId;
-        const avatarImage = req.body.image;
+        console.log(req.body)
+        const avatarImage = req.body?.image;
         const userData = await User.findByIdAndUpdate(userId, {
             isAvatarImageSet: true,
             avatarImage
