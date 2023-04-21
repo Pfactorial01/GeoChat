@@ -53,7 +53,7 @@ const fetchImage = async () =>
     { const data = [];
     for (let i = 0; i < 4; i++) {
       const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 1000)}.svg?apikey=HfC8v7hdF4JkVX`
+        `${api}/{Math.floor(Math.random() * 1000)}.svg?apikey=HfC8v7hdF4JkVX`
       );
       const buffer = new Buffer(image.data);
       data.push(buffer.toString("base64"));
