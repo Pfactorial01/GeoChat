@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
 export default function SetAvatar() {
-  const api = `https://api.multiavatar.com`;
+  const api = `https://api.multiavatar.com/4645646`;
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -53,7 +53,7 @@ const fetchImage = async () =>
     { const data = [];
     for (let i = 0; i < 4; i++) {
       const image = await axios.get(
-        `${api}/{Math.floor(Math.random * 1000)}.svg?apikey=HfC8v7hdF4JkVX`
+        `${api}/1000.svg?apikey=HfC8v7hdF4JkVX`
       );
       const buffer = new Buffer(image.data);
       data.push(buffer.toString("base64"));
